@@ -8,7 +8,11 @@ public class DistanceAndDirectionCalculator {
     public static double distance(Point from, Point to) {
         xDistance = getDistance(to.getX(), from.getX());
         yDistance = getDistance(to.getY(), from.getY());
-        return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
+        return Math.sqrt(square(xDistance) + square(yDistance));
+    }
+
+    private static double square(double xDistance) {
+        return Math.pow(xDistance, 2);
     }
 
     public static double direction(Point from, Point to) {
